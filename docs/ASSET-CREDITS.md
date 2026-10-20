@@ -24,3 +24,8 @@ The font files are bundled locally. License texts were retrieved from the [Googl
 The house icon, monogram, service illustrations, twelve material samples, mesh, coating surfaces, finish grain, trowel and measuring tape were created as original SVG, CSS and canvas code for this demo. The tape locations and distances are fictional examples. They are illustrative textures, not manufacturer product samples.
 
 The Instagram reel is linked for reference analysis only. Its video, thumbnail, creator likeness and website screenshots are not bundled or republished.
+
+
+## New composition demo (`/demo/`)
+
+The separate demo uses original SVG material textures and inline illustrations, with no third-party photography. It adds **Lora** from the [official Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/lora), under [its included SIL Open Font License](../demo/assets/Lora-OFL.txt). DM Sans and its license are also bundled in `demo/assets/`. The demo artwork is illustrative rather than manufacturer product imagery.

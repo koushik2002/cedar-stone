@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "check": "Refined plaster button changes pixels at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Opening layout has no overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Refined pointer plaster changes pixels",
+      "passed": true
+    },
+    {
+      "check": "Refined plaster button changes pixels at 390px",
+      "passed": true
+    },
+    {
+      "check": "Opening layout has no overflow at 390px",
+      "passed": true
+    }
+  ],
+  "passed": 5,
+  "failed": 0,
+  "exceptions": []
+}

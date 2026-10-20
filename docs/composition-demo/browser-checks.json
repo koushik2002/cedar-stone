@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-20",
+  "browser": "Headless Chrome with isolated profile; mobile viewport emulation",
+  "checks": [
+    {
+      "check": "All twelve samples, local images and fonts load",
+      "passed": true
+    },
+    {
+      "check": "Three coherent desktop scroll scenes",
+      "passed": true
+    },
+    {
+      "check": "Page uses new navy, slate, ivory and yellow palette",
+      "passed": true
+    },
+    {
+      "check": "Page structure follows wall, catalogue, services, process, tape, project",
+      "passed": true
+    },
+    {
+      "check": "Opening wall shows headline and keeps finish controls inert",
+      "passed": true
+    },
+    {
+      "check": "Pointer trowel changes wall pixels without advancing coats",
+      "passed": true
+    },
+    {
+      "check": "Plaster button provides a working alternative",
+      "passed": true
+    },
+    {
+      "check": "Scroll reveals successive rough-edged wall layers",
+      "passed": true
+    },
+    {
+      "check": "Wall and four-stage legend stay below compact header",
+      "passed": true
+    },
+    {
+      "check": "Complete wall reveals texture and colour controls",
+      "passed": true
+    },
+    {
+      "check": "Wall texture dash changes selection",
+      "passed": true
+    },
+    {
+      "check": "Wall texture smooth changes selection",
+      "passed": true
+    },
+    {
+      "check": "Wall texture float changes selection",
+      "passed": true
+    },
+    {
+      "check": "Wall colour sand changes full wall",
+      "passed": true
+    },
+    {
+      "check": "Wall colour clay changes full wall",
+      "passed": true
+    },
+    {
+      "check": "Wall reverses correctly on upward scroll",
+      "passed": true
+    },
+    {
+      "check": "Stage buttons and arrow-key navigation work",
+      "passed": true
+    },
+    {
+      "check": "Wall finish carries exact texture and colour into the compact form",
+      "passed": true
+    },
+    {
+      "check": "Catalogue introduction shares the sample track",
+      "passed": true
+    },
+    {
+      "check": "Vertical scrolling moves tall material boards sideways",
+      "passed": true
+    },
+    {
+      "check": "Last material is fully reachable",
+      "passed": true
+    },
+    {
+      "check": "Catalogue releases into ordinary vertical services",
+      "passed": true
+    },
+    {
+      "check": "Filter siding shows 8 samples",
+      "passed": true
+    },
+    {
+      "check": "Filter stucco shows 3 samples",
+      "passed": true
+    },
+    {
+      "check": "Filter stone shows 1 samples",
+      "passed": true
+    },
+    {
+      "check": "Filter all shows 12 samples",
+      "passed": true
+    },
+    {
+      "check": "Catalogue next button advances one board",
+      "passed": true
+    },
+    {
+      "check": "Catalogue End key reaches final material",
+      "passed": true
+    },
+    {
+      "check": "Catalogue Home key restores introduction",
+      "passed": true
+    },
+    {
+      "check": "Offscreen keyboard focus brings material into view",
+      "passed": true
+    },
+    {
+      "check": "Material dialog shows matching texture and content",
+      "passed": true
+    },
+    {
+      "check": "Dialog keeps keyboard focus inside its controls",
+      "passed": true
+    },
+    {
+      "check": "Escape dismisses dialog and restores page scroll",
+      "passed": true
+    },
+    {
+      "check": "Material selection reaches form with correct service",
+      "passed": true
+    },
+    {
+      "check": "Tape starts retracted with housing visible",
+      "passed": true
+    },
+    {
+      "check": "Tape blade extends with scroll",
+      "passed": true
+    },
+    {
+      "check": "Tape case exits while hook stays in view",
+      "passed": true
+    },
+    {
+      "check": "Tape graduations and alternating places are present",
+      "passed": true
+    },
+    {
+      "check": "Tape reaches final distance with last place readable",
+      "passed": true
+    },
+    {
+      "check": "Tape reverses and retracts",
+      "passed": true
+    },
+    {
+      "check": "Tape range controls the scroll journey",
+      "passed": true
+    },
+    {
+      "check": "Tape keyboard navigation works",
+      "passed": true
+    },
+    {
+      "check": "Process fills advance on viewport entry",
+      "passed": true
+    },
+    {
+      "check": "Form blocks missing required details",
+      "passed": true
+    },
+    {
+      "check": "Form blocks whitespace-only names",
+      "passed": true
+    },
+    {
+      "check": "Form blocks invalid email",
+      "passed": true
+    },
+    {
+      "check": "Brief safely includes visitor notes, selected finish and demo boundary",
+      "passed": true
+    },
+    {
+      "check": "Actual brief text file downloads",
+      "passed": true
+    },
+    {
+      "check": "Copy provides success or a useful download fallback",
+      "passed": true
+    },
+    {
+      "check": "Reset clears visitor information and finish selection",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 1600\u00d71000",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 1440\u00d7900",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 1280\u00d7800",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 1024\u00d7768",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 850\u00d7900",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 768\u00d71024",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 390\u00d7844",
+      "passed": true
+    },
+    {
+      "check": "Wall choices and legend fit 390px screen",
+      "passed": true
+    },
+    {
+      "check": "Last material and rail controls fit 390px screen",
+      "passed": true
+    },
+    {
+      "check": "Final tape place and range fit 390px screen",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 360\u00d7780",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 320\u00d7740",
+      "passed": true
+    },
+    {
+      "check": "Wall choices and legend fit 320px screen",
+      "passed": true
+    },
+    {
+      "check": "Last material and rail controls fit 320px screen",
+      "passed": true
+    },
+    {
+      "check": "Final tape place and range fit 320px screen",
+      "passed": true
+    },
+    {
+      "check": "No horizontal page overflow at 844\u00d7390",
+      "passed": true
+    },
+    {
+      "check": "Short landscape removes pinning and preserves normal scrolling",
+      "passed": true
+    },
+    {
+      "check": "Mobile keeps three scroll-driven scenes",
+      "passed": true
+    },
+    {
+      "check": "Mobile menu opens accessibly",
+      "passed": true
+    },
+    {
+      "check": "Escape closes mobile menu",
+      "passed": true
+    },
+    {
+      "check": "Mobile navigation reaches catalogue entrance and closes menu",
+      "passed": true
+    },
+    {
+      "check": "Mobile material dialog fits screen",
+      "passed": true
+    },
+    {
+      "check": "Mobile selected finish reaches form",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion disables all pinned scenes",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion wall remains usable",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion uses native accessible material rail",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion tape is natively scrollable",
+      "passed": true
+    },
+    {
+      "check": "Restoring motion resets native tape offset",
+      "passed": true
+    },
+    {
+      "check": "No uncaught JavaScript exceptions",
+      "passed": true
+    },
+    {
+      "check": "No third-party runtime requests",
+      "passed": true
+    }
+  ],
+  "passed": 80,
+  "failed": 0,
+  "exceptions": [],
+  "externalRequests": []
+}

@@ -4,6 +4,8 @@ An original, responsive exterior contractor concept built for Koushik to demonst
 
 Live website: [koushik2002.github.io/cedar-stone/](https://koushik2002.github.io/cedar-stone/) · Source: [koushik2002/cedar-stone](https://github.com/koushik2002/cedar-stone)
 
+**New composition demo:** [koushik2002.github.io/cedar-stone/demo/](https://koushik2002.github.io/cedar-stone/demo/) — revised structure, navy/ivory/yellow palette, larger material boards and a compact project form. See the [design plan](docs/DEMO-DESIGN-PLAN.md) and [80-check verification record](docs/composition-demo/QA.md).
+
 ![Desktop preview of Cedar and Stone](docs/desktop-preview.png)
 
 The saved 17.7-second reference video was reviewed twice, including close inspection of the wall, material track and tape transitions. It shows **Lath & Lap Exteriors**: a stucco/siding website with a wall-coating interaction, material samples, service navigation and a tape-measure service-area section. This demo uses an original brand, layout, text, textures and implementation. No reference footage or screenshots are distributed in the site.
