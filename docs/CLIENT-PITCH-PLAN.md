@@ -11,9 +11,9 @@ Use the Cedar & Stone demo as an example of what is possible. It is a fictional 
 | Time | Show | Say |
 | --- | --- | --- |
 | 0:00–0:20 | Hero on desktop, then the mobile layout | “This gives someone discovering your business a clear first impression and one obvious next step.” |
-| 0:20–0:45 | Drag the wall slider or select its layers | “Instead of just listing services, we show what goes into the work. We can design a relevant interaction for your trade.” |
-| 0:45–1:10 | Filter materials, open a sample, choose it | “Customers can explore finishes before the first call, and their preference carries into the project brief.” |
-| 1:10–1:30 | Switch inspiration concepts | “Your version would use your own approved project photos and accurate descriptions.” |
+| 0:20–0:45 | Move the trowel, then scroll through the wall layers | “Instead of just listing services, we show what goes into the work. We can design a relevant interaction for your trade.” |
+| 0:45–1:10 | Scroll the material track, open a sample, choose it | “Customers can explore finishes before the first call, and their preference carries into the project brief.” |
+| 1:10–1:30 | Scroll through the service-area measuring tape | “We can make your service area memorable too. Your version would use verified locations and coverage.” |
 | 1:30–2:00 | Complete the brief with dummy data, download it | “This demo builds a brief locally. For your website, we can connect an agreed delivery method and test that enquiries reach the right person.” |
 
 Close with: “Which service do you most want to showcase, and where should a new enquiry go?”

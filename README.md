@@ -6,7 +6,7 @@ Live website: [koushik2002.github.io/cedar-stone/](https://koushik2002.github.io
 
 ![Desktop preview of Cedar and Stone](docs/desktop-preview.png)
 
-The reference was inspected through its public caption, thumbnail and video frames. It shows **Lath & Lap Exteriors**: a stucco/siding website with a wall-coating interaction, material samples, service navigation and a tape-measure service-area section. This demo uses an original brand, layout, text, textures and implementation. No reference footage or screenshots are distributed in the site.
+The saved 17.7-second reference video was reviewed twice, including close inspection of the wall, material track and tape transitions. It shows **Lath & Lap Exteriors**: a stucco/siding website with a wall-coating interaction, material samples, service navigation and a tape-measure service-area section. This demo uses an original brand, layout, text, textures and implementation. No reference footage or screenshots are distributed in the site.
 
 ## Open the demo
 
@@ -21,8 +21,12 @@ Then visit `http://localhost:8000`.
 ## What works
 
 - Responsive navigation and layouts for desktop and mobile.
-- Four-layer wall explorer, controlled with buttons or a keyboard/touch accessible slider.
-- Six original material textures, category filters and material detail dialogs.
+- Opening wall with pointer troweling, four scroll-driven coats with rough edges, stage buttons and a keyboard/touch slider.
+- Full-wall texture and colour exploration, with the selected finish carried into the brief.
+- Twelve original material samples in a continuous horizontal track: eight siding, three stucco and one stone. Desktop scrolling drives the track; mobile uses native swipe and navigation buttons.
+- Illustrated services and four process rows with advancing background fills.
+- An extending yellow measuring tape with graduations, a metal hook and seven alternating illustrative place labels.
+- Normal scrolling and manual controls when reduced motion is preferred or the viewport is too short to pin sections.
 - Select a material and carry it into the project brief.
 - Three switchable home inspiration concepts.
 - Expandable FAQs.
@@ -34,7 +38,7 @@ Then visit `http://localhost:8000`.
 ## Put it on GitHub Pages
 
 1. Create a repository, for example `cedar-stone`. A public repository works with GitHub Free.
-2. Upload **the contents of this folder** to the repository root. `index.html`, `styles.css`, `app.js` and `assets/` must sit at that root, rather than inside an extra `cedar-stone` folder. Include `.nojekyll` if using Git; a browser upload may omit hidden files, but this simple site also works with the default Jekyll processing.
+2. Upload **the contents of this folder** to the repository root. `index.html`, both CSS files, both JavaScript files and `assets/` must sit at that root, rather than inside an extra `cedar-stone` folder. Include `.nojekyll` if using Git; a browser upload may omit hidden files, but this simple site also works with the default Jekyll processing.
 3. Open **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**.
 4. Choose **main** and **/(root)**, then save.
 5. When deployment completes, use **Visit site**. Your link follows this pattern: `https://koushik2002.github.io/cedar-stone/`.
@@ -60,14 +64,15 @@ GitHub references: [publish from a branch](https://docs.github.com/en/pages/gett
 
 Use the [client pitch and delivery plan](docs/CLIENT-PITCH-PLAN.md). It includes a two-minute walkthrough, an outreach draft, scope options, proposed example pricing and a delivery schedule. [Reference analysis](docs/REFERENCE-ANALYSIS.md) separates observations from the pitch interpretation.
 
-Validation: **32 browser checks passed**, plus static asset checks and a direct-file smoke check. See the [QA record](docs/QA.md) and [mobile preview](docs/mobile-preview.png).
+Validation: **69 browser checks passed**, with no failures, plus static asset checks. See the [QA record](docs/QA.md). See the [mobile preview](docs/mobile-preview.png), [material track](docs/materials-preview.png) and [measuring tape](docs/tape-preview.png).
 
 ## Personalise for a real business
 
 | Change | Where |
 | --- | --- |
 | Brand, positioning, navigation, FAQs, process | `index.html` |
-| Colours, spacing, type sizes, breakpoints | CSS variables and rules in `styles.css` |
+| Colours, spacing, type sizes, breakpoints | `styles.css` and `motion.css` |
+| Scroll scenes, trowel, finish choices, tape locations/distances | `motion.js` |
 | Materials and inspiration content | `materials` and `projects` at the top of `app.js` |
 | Photographs and textures | `assets/` |
 | Website creator credit | Concept bar and footer in `index.html` |
@@ -79,8 +84,10 @@ Before a real launch, replace the fictional identity and illustrative samples, a
 
 ```text
 index.html            Website
-styles.css            Responsive design
-app.js                Catalogue, wall explorer, navigation and brief
+styles.css            Shared design and form/dialog styles
+motion.css            Responsive wall, material, process and tape scenes
+app.js                Catalogue, navigation and local project brief
+motion.js             Scroll scenes, trowel, finish picker and tape
 assets/               Local photos, SVG textures, fonts and license notices
 docs/                 Pitch plan, source analysis, asset credits and QA record
 .nojekyll             Bypass Jekyll when included in the publishing source

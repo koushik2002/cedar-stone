@@ -1,44 +1,286 @@
 {
-  "passed": [
-    "Catalogue renders six materials",
-    "Siding filter shows three cards",
-    "Stucco filter shows two cards",
-    "Stone filter shows one card and announces count",
-    "Material detail opens as a modal",
-    "Escape closes material dialog and restores scrolling",
-    "Chosen material and service carry into brief",
-    "Layer button fully reveals finish",
-    "Keyboard moves wall explorer between layers",
-    "Project switching updates image and content",
-    "Missing service blocks moving to next step",
-    "Valid project advances to details",
-    "Missing location blocks moving to next step",
-    "Back navigation preserves material choice",
-    "Invalid email blocks brief creation",
-    "Valid brief includes selections from every step",
-    "Visitor notes render as text without HTML execution",
-    "Success states no enquiry was sent",
-    "Downloaded brief contains the submitted details",
-    "Clipboard returns success or usable download fallback",
-    "Restart clears previous details",
-    "All image assets load",
-    "Local fonts load",
-    "No horizontal overflow at 1440px",
-    "No horizontal overflow at 1024px",
-    "No horizontal overflow at 768px",
-    "No horizontal overflow at 390px",
-    "Mobile menu opens and Escape closes it",
-    "No horizontal overflow at 320px",
-    "Material dialog fits narrow mobile viewport",
-    "No uncaught JavaScript exceptions",
-    "No third-party network requests during demo use"
+  "date": "2026-10-20",
+  "browser": "Headless Chrome, isolated profile",
+  "checks": [
+    {
+      "check": "Twelve material samples and all local images/fonts loaded",
+      "passed": true
+    },
+    {
+      "check": "Three desktop scenes pinned",
+      "passed": true
+    },
+    {
+      "check": "Opening wall visible and finish picker inaccessible",
+      "passed": true
+    },
+    {
+      "check": "Pointer deposits plaster independently of wall stage",
+      "passed": true
+    },
+    {
+      "check": "Pointer changes canvas pixels",
+      "passed": true
+    },
+    {
+      "check": "Button alternative deposits plaster",
+      "passed": true
+    },
+    {
+      "check": "Scroll reveals full scratch coat and partial base coat",
+      "passed": true
+    },
+    {
+      "check": "Final finish fills wall and exposes finish controls",
+      "passed": true
+    },
+    {
+      "check": "Finish texture and colour selectors update appearance",
+      "passed": true
+    },
+    {
+      "check": "Wall scroll reverses coating and restores stage",
+      "passed": true
+    },
+    {
+      "check": "Layer buttons and keyboard range move between stages",
+      "passed": true
+    },
+    {
+      "check": "Chosen wall finish carries into project brief",
+      "passed": true
+    },
+    {
+      "check": "Vertical scroll moves continuous material track horizontally",
+      "passed": true
+    },
+    {
+      "check": "Last material is reachable at rail end",
+      "passed": true
+    },
+    {
+      "check": "Material scene releases to next vertical section",
+      "passed": true
+    },
+    {
+      "check": "Material filter siding has 8 visible samples",
+      "passed": true
+    },
+    {
+      "check": "Material filter stucco has 3 visible samples",
+      "passed": true
+    },
+    {
+      "check": "Material filter stone has 1 visible samples",
+      "passed": true
+    },
+    {
+      "check": "Material filter all has 12 visible samples",
+      "passed": true
+    },
+    {
+      "check": "Rail next button advances track",
+      "passed": true
+    },
+    {
+      "check": "Rail keyboard End reaches last sample",
+      "passed": true
+    },
+    {
+      "check": "Rail keyboard Home and ArrowRight navigate samples",
+      "passed": true
+    },
+    {
+      "check": "Keyboard focus brings offscreen sample into view",
+      "passed": true
+    },
+    {
+      "check": "Material dialog opens with matching detail",
+      "passed": true
+    },
+    {
+      "check": "Escape dismisses material dialog",
+      "passed": true
+    },
+    {
+      "check": "Material selection preselects appropriate service",
+      "passed": true
+    },
+    {
+      "check": "Tape starts with case and retracted blade",
+      "passed": true
+    },
+    {
+      "check": "Scrolling first extends tape blade",
+      "passed": true
+    },
+    {
+      "check": "Tape case leaves view while hook remains in view",
+      "passed": true
+    },
+    {
+      "check": "Tape includes real graduations and alternating place labels",
+      "passed": true
+    },
+    {
+      "check": "Tape reaches forty kilometres",
+      "passed": true
+    },
+    {
+      "check": "Tape retracts when scrolling back",
+      "passed": true
+    },
+    {
+      "check": "Tape range controls scroll position",
+      "passed": true
+    },
+    {
+      "check": "Tape keyboard controls work",
+      "passed": true
+    },
+    {
+      "check": "Process rows fill as they enter viewport",
+      "passed": true
+    },
+    {
+      "check": "Brief advances with chosen finish",
+      "passed": true
+    },
+    {
+      "check": "Brief blocks missing required location and timing",
+      "passed": true
+    },
+    {
+      "check": "Brief Back retains selections",
+      "passed": true
+    },
+    {
+      "check": "Invalid email blocks brief creation",
+      "passed": true
+    },
+    {
+      "check": "Brief contains saved texture/colour and safe plain-text notes",
+      "passed": true
+    },
+    {
+      "check": "Actual brief text file downloads",
+      "passed": true
+    },
+    {
+      "check": "Clipboard returns useful success or fallback feedback",
+      "passed": true
+    },
+    {
+      "check": "Reset clears brief and all visitor data",
+      "passed": true
+    },
+    {
+      "check": "Optional inspiration concepts still switch",
+      "passed": true
+    },
+    {
+      "check": "FAQ expands",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 1440\u00d71000",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 1024\u00d7900",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 768\u00d71024",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 390\u00d7844",
+      "passed": true
+    },
+    {
+      "check": "Finish controls fit 390px mobile viewport",
+      "passed": true
+    },
+    {
+      "check": "Tape and distance control fit 390px mobile viewport",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 320\u00d7740",
+      "passed": true
+    },
+    {
+      "check": "Finish controls fit 320px mobile viewport",
+      "passed": true
+    },
+    {
+      "check": "Tape and distance control fit 320px mobile viewport",
+      "passed": true
+    },
+    {
+      "check": "No page overflow at 844\u00d7390",
+      "passed": true
+    },
+    {
+      "check": "Short landscape uses normal vertical sections",
+      "passed": true
+    },
+    {
+      "check": "Mobile navigation opens accessibly",
+      "passed": true
+    },
+    {
+      "check": "Escape closes mobile navigation",
+      "passed": true
+    },
+    {
+      "check": "Selecting mobile section closes navigation",
+      "passed": true
+    },
+    {
+      "check": "Mobile gallery uses native horizontal overflow",
+      "passed": true
+    },
+    {
+      "check": "Mobile keyboard reaches last sample",
+      "passed": true
+    },
+    {
+      "check": "Mobile material dialog fits viewport",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion removes all pinned scroll scenes",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion wall remains controllable",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion tape scrolls natively with range",
+      "passed": true
+    },
+    {
+      "check": "Reduced motion has no document overflow",
+      "passed": true
+    },
+    {
+      "check": "Restoring animation resets native tape scroll offset",
+      "passed": true
+    },
+    {
+      "check": "No uncaught JavaScript exceptions",
+      "passed": true
+    },
+    {
+      "check": "No third-party requests",
+      "passed": true
+    }
   ],
-  "count": 32,
-  "viewports": [
-    1440,
-    1024,
-    768,
-    390,
-    320
-  ]
+  "passed": 69,
+  "failed": 0,
+  "exceptions": [],
+  "externalRequests": []
 }

@@ -2,12 +2,138 @@
 
 // Replace this sample catalogue with your client's approved products.
 const materials = [
-  { id: '01', name: 'Natural cedar', category: 'siding', type: 'TIMBER / VERTICAL CLADDING', image: 'assets/swatch-cedar.svg', summary: 'Warm grain. Quiet confidence. Always a classic.', description: 'A warm timber direction with a vertical rhythm and a naturally varied grain. Use it as an accent or as the starting point for a complete exterior palette.', tone: 'Warm amber', character: 'Natural wood grain' },
-  { id: '02', name: 'Chalk white', category: 'siding', type: 'SIDING / HORIZONTAL LAP', image: 'assets/swatch-white.svg', summary: 'Clean lines with a little softness around the edges.', description: 'A soft white palette with the familiar rhythm of horizontal lap siding. Pair it with timber, muted greenery or dark window frames for a balanced exterior.', tone: 'Soft white', character: 'Horizontal lines' },
-  { id: '03', name: 'Sand & lime', category: 'stucco', type: 'STUCCO / FINE TEXTURE', image: 'assets/swatch-stucco.svg', summary: 'A sun-warmed neutral with a beautifully tactile finish.', description: 'An understated sand-coloured stucco direction. The fine texture brings gentle depth to simple architectural shapes and works well alongside warm timber.', tone: 'Warm sand', character: 'Fine, tactile texture' },
-  { id: '04', name: 'Forest grey', category: 'siding', type: 'SIDING / HORIZONTAL LAP', image: 'assets/swatch-grey.svg', summary: 'Grounded, calm and right at home in the landscape.', description: 'A muted grey-green palette with a crisp horizontal profile. Explore it for a quieter, landscape-led exterior with natural stone or light trim.', tone: 'Grey green', character: 'Horizontal lines' },
-  { id: '05', name: 'Limestone', category: 'stone', type: 'STONE / LINEAR ACCENT', image: 'assets/swatch-stone.svg', summary: 'Organic variation. An exterior with a little more depth.', description: 'A pale stone direction with layered, irregular blocks. Consider it for a feature wall, an entrance or a grounding accent below a lighter exterior finish.', tone: 'Pale oatmeal', character: 'Layered stone' },
-  { id: '06', name: 'Soft terracotta', category: 'stucco', type: 'STUCCO / EARTHEN TEXTURE', image: 'assets/swatch-clay.svg', summary: 'An earthy warmth that makes its own first impression.', description: 'A warm terracotta palette with a softly textured surface. Pair with dark metal, natural planting or light stone to explore a distinctly earthy direction.', tone: 'Muted terracotta', character: 'Soft earthen texture' }
+  {
+    "id": "01",
+    "name": "Chalk white",
+    "category": "siding",
+    "type": "SIDING / HORIZONTAL LAP",
+    "image": "assets/swatch-white.svg",
+    "summary": "Clean lines with a little softness around the edges.",
+    "description": "A soft white palette with the familiar rhythm of horizontal lap siding. Pair it with timber, muted greenery or dark window frames for a balanced exterior.",
+    "tone": "Soft white",
+    "character": "Horizontal lines"
+  },
+  {
+    "id": "02",
+    "name": "Forest grey",
+    "category": "siding",
+    "type": "SIDING / HORIZONTAL LAP",
+    "image": "assets/swatch-grey.svg",
+    "summary": "Grounded, calm and right at home in the landscape.",
+    "description": "A muted grey-green palette with a crisp horizontal profile. Explore it for a quieter, landscape-led exterior with natural stone or light trim.",
+    "tone": "Grey green",
+    "character": "Horizontal lines"
+  },
+  {
+    "name": "Golden ochre",
+    "category": "siding",
+    "type": "SIDING / PAINTED LAP",
+    "image": "assets/swatch-ochre.svg",
+    "summary": "A little sunshine, in every line.",
+    "description": "A warm ochre direction with overlapping horizontal boards. Explore the colour alongside trim samples and confirm the actual profile and coating with your supplier.",
+    "tone": "Golden ochre",
+    "character": "Overlapping lap profile",
+    "id": "03"
+  },
+  {
+    "name": "Deep ocean",
+    "category": "siding",
+    "type": "SIDING / HORIZONTAL LAP",
+    "image": "assets/swatch-ocean.svg",
+    "summary": "Cool depth. A calm architectural rhythm.",
+    "description": "A deep blue-grey palette with a horizontal lap profile. Use the digital sample to explore a mood, then confirm finish, dimensions and room for detailing with your contractor.",
+    "tone": "Blue grey",
+    "character": "Horizontal shadow lines",
+    "id": "04"
+  },
+  {
+    "id": "05",
+    "name": "Natural cedar",
+    "category": "siding",
+    "type": "TIMBER / VERTICAL CLADDING",
+    "image": "assets/swatch-cedar.svg",
+    "summary": "Warm grain. Quiet confidence. Always a classic.",
+    "description": "A warm timber direction with a vertical rhythm and a naturally varied grain. Use it as an accent or as the starting point for a complete exterior palette.",
+    "tone": "Warm amber",
+    "character": "Natural wood grain"
+  },
+  {
+    "name": "Charcoal timber",
+    "category": "siding",
+    "type": "TIMBER / VERTICAL RHYTHM",
+    "image": "assets/swatch-charcoal.svg",
+    "summary": "Dark grain. Defined proportions.",
+    "description": "A charcoal timber direction with narrow vertical boards. Compare real samples for tone, grain, coating and suitability before specifying a product.",
+    "tone": "Charcoal green",
+    "character": "Dark vertical grain",
+    "id": "06"
+  },
+  {
+    "name": "Cedar shingles",
+    "category": "siding",
+    "type": "TIMBER / SHINGLE STUDY",
+    "image": "assets/swatch-shingles.svg",
+    "summary": "Small pieces. Natural character.",
+    "description": "An illustrative cedar shingle surface with varied lengths, warm tones and staggered joints. Discuss material, exposure and maintenance expectations with your supplier.",
+    "tone": "Warm cedar",
+    "character": "Staggered shingle pattern",
+    "id": "07"
+  },
+  {
+    "name": "Weathered cedar",
+    "category": "siding",
+    "type": "TIMBER / SHINGLE STUDY",
+    "image": "assets/swatch-weathered.svg",
+    "summary": "A softer, silvered side of timber.",
+    "description": "A weathered-grey shingle direction. This is a colour study, not a prediction of how a product will age. Confirm the actual finish and maintenance with your supplier.",
+    "tone": "Silver grey",
+    "character": "Varied shingle tones",
+    "id": "08"
+  },
+  {
+    "id": "09",
+    "name": "Sand & lime",
+    "category": "stucco",
+    "type": "STUCCO / FINE TEXTURE",
+    "image": "assets/swatch-stucco.svg",
+    "summary": "A sun-warmed neutral with a beautifully tactile finish.",
+    "description": "An understated sand-coloured stucco direction. The fine texture brings gentle depth to simple architectural shapes and works well alongside warm timber.",
+    "tone": "Warm sand",
+    "character": "Fine, tactile texture"
+  },
+  {
+    "name": "Pebbled lime",
+    "category": "stucco",
+    "type": "STUCCO / COARSE TEXTURE",
+    "image": "assets/swatch-dash.svg",
+    "summary": "A little more texture. A different kind of light.",
+    "description": "An illustrative pebbled plaster direction with a more pronounced surface. Explore real samples in daylight and ask about the selected assembly, finish and installation requirements.",
+    "tone": "Warm limestone",
+    "character": "Coarse tactile texture",
+    "id": "10"
+  },
+  {
+    "id": "11",
+    "name": "Soft terracotta",
+    "category": "stucco",
+    "type": "STUCCO / EARTHEN TEXTURE",
+    "image": "assets/swatch-clay.svg",
+    "summary": "An earthy warmth that makes its own first impression.",
+    "description": "A warm terracotta palette with a softly textured surface. Pair with dark metal, natural planting or light stone to explore a distinctly earthy direction.",
+    "tone": "Muted terracotta",
+    "character": "Soft earthen texture"
+  },
+  {
+    "id": "12",
+    "name": "Limestone",
+    "category": "stone",
+    "type": "STONE / LINEAR ACCENT",
+    "image": "assets/swatch-stone.svg",
+    "summary": "Organic variation. An exterior with a little more depth.",
+    "description": "A pale stone direction with layered, irregular blocks. Consider it for a feature wall, an entrance or a grounding accent below a lighter exterior finish.",
+    "tone": "Pale oatmeal",
+    "character": "Layered stone"
+  }
 ];
 
 const projects = [
@@ -20,6 +146,7 @@ const grid = document.querySelector('#material-grid');
 const materialSelect = document.querySelector('#material');
 const materialDialog = document.querySelector('#material-dialog');
 let chosenMaterial = materials[0];
+let savedWallFinish = null;
 
 materials.forEach(material => {
   const option = document.createElement('option');
@@ -51,6 +178,7 @@ document.querySelectorAll('.filter').forEach(button => {
       if (visible) count += 1;
     });
     document.querySelector('#material-count').textContent = `${count} ${count === 1 ? 'finish' : 'finishes'} to explore`;
+    document.dispatchEvent(new CustomEvent('materials:filter'));
   });
 });
 
@@ -86,6 +214,7 @@ materialDialog.addEventListener('close', () => document.body.classList.remove('m
 document.querySelector('#choose-material').addEventListener('click', () => {
   if (!document.querySelector('#quote-success').hidden) resetBrief();
   materialSelect.value = chosenMaterial.name;
+  savedWallFinish = null;
   document.querySelector('#service').value = { siding: 'Siding & cladding', stucco: 'Stucco finishes', stone: 'Stone accents' }[chosenMaterial.category];
   setFormStep(0);
   materialDialog.close();
@@ -94,42 +223,7 @@ document.querySelector('#choose-material').addEventListener('click', () => {
   materialSelect.focus({ preventScroll: true });
 });
 
-const wallProgress = document.querySelector('#wall-progress');
-const wallLabels = ['01 / WEATHER BARRIER', '02 / METAL LATH', '03 / BASE COATS', '04 / THE FINISH'];
-const wallLayers = [...document.querySelectorAll('.wall-layer')].slice(1);
 
-function updateWall(value) {
-  const position = Number(value);
-  wallLayers.forEach((layer, index) => {
-    const progress = Math.max(0, Math.min(1, position - index));
-    layer.style.clipPath = `inset(0 ${(1 - progress) * 100}% 0 0)`;
-  });
-  const active = Math.round(position);
-  document.querySelector('#wall-stage').dataset.layer = String(active);
-  document.querySelector('#wall-label').textContent = wallLabels[active];
-  document.querySelector('#wall-progress-label').textContent = `Layer ${active + 1} of 4`;
-  wallProgress.setAttribute('aria-valuetext', wallLabels[active].slice(5).toLowerCase());
-  document.querySelectorAll('.layer-step').forEach((button, index) => {
-    button.classList.toggle('is-active', index === active);
-    button.setAttribute('aria-pressed', String(index === active));
-  });
-}
-wallProgress.addEventListener('input', () => updateWall(wallProgress.value));
-wallProgress.addEventListener('keydown', event => {
-  const forward = ['ArrowRight', 'ArrowUp'].includes(event.key);
-  const backward = ['ArrowLeft', 'ArrowDown'].includes(event.key);
-  if (!forward && !backward) return;
-  event.preventDefault();
-  const current = Number(wallProgress.value);
-  const next = forward ? Math.floor(current + .001) + 1 : Math.ceil(current - .001) - 1;
-  wallProgress.value = String(Math.max(0, Math.min(3, next)));
-  updateWall(wallProgress.value);
-});
-document.querySelectorAll('.layer-step').forEach(button => button.addEventListener('click', () => {
-  wallProgress.value = button.dataset.layer;
-  updateWall(button.dataset.layer);
-}));
-updateWall(0);
 
 document.querySelectorAll('.project-selector').forEach(button => {
   button.addEventListener('click', () => {
@@ -240,6 +334,7 @@ form.addEventListener('submit', event => {
     '',
     `Service: ${value('service')}`,
     `Finish: ${value('material') || 'Open to recommendations'}`,
+    ...(savedWallFinish && value('material') === savedWallFinish.material ? [`Illustrative wall exploration: ${savedWallFinish.texture} / ${savedWallFinish.colour}`] : []),
     `Location: ${value('location')}`,
     `Timing: ${value('timeline')}`,
     `Name: ${value('name')}`,
@@ -279,6 +374,7 @@ document.querySelector('#copy-brief').addEventListener('click', async () => {
 function resetBrief() {
   form.reset();
   projectBrief = '';
+  savedWallFinish = null;
   document.querySelector('#brief-preview').textContent = '';
   document.querySelector('#copy-status').textContent = '';
   document.querySelector('#quote-form-wrap').hidden = false;
@@ -289,3 +385,15 @@ function resetBrief() {
 document.querySelector('#restart-brief').addEventListener('click', resetBrief);
 document.querySelector('#year').textContent = new Date().getFullYear();
 setFormStep(0);
+
+// Carry the wall exploration into the same local brief as the material library.
+document.addEventListener('wall:save', event => {
+  if (!document.querySelector('#quote-success').hidden) resetBrief();
+  const material = event.detail.colourKey === 'clay' ? 'Soft terracotta' : event.detail.textureKey === 'dash' ? 'Pebbled lime' : 'Sand & lime';
+  savedWallFinish = {...event.detail, material};
+  materialSelect.value = material;
+  document.querySelector('#service').value = 'Stucco finishes';
+  setFormStep(0);
+  document.querySelector('#quote').scrollIntoView({behavior: reducedMotion() ? 'instant' : 'smooth'});
+  materialSelect.focus({preventScroll:true});
+});

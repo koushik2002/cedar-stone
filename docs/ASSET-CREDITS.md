@@ -21,6 +21,6 @@ The font files are bundled locally. License texts were retrieved from the [Googl
 
 ## Original assets and reference
 
-The house icon, monogram and seven material textures were created as SVG/code for this demo. They are illustrative textures, not manufacturer product samples.
+The house icon, monogram, service illustrations, twelve material samples, mesh, coating surfaces, finish grain, trowel and measuring tape were created as original SVG, CSS and canvas code for this demo. The tape locations and distances are fictional examples. They are illustrative textures, not manufacturer product samples.
 
 The Instagram reel is linked for reference analysis only. Its video, thumbnail, creator likeness and website screenshots are not bundled or republished.
