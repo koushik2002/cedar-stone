@@ -4,26 +4,147 @@
   const $ = (query, root=document) => root.querySelector(query);
   const $$ = (query, root=document) => [...root.querySelectorAll(query)];
   const clamp = n => Math.max(0,Math.min(1,n));
+  const TAPE_KM = 20;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const header = $('.header');
   const materials = [
-    {name:'Porcelain lap',file:'porcelain',category:'siding',type:'LAP SIDING / PALE NEUTRAL',summary:'Clean horizontal lines. A softer shade of white.',description:'A quiet, warm white with overlapping boards and fine surface grain. Explore how a pale horizontal profile can emphasise the proportions of your home.',tone:'Warm white',character:'Quiet, horizontal'},
-    {name:'Harbour grey',file:'harbour',category:'siding',type:'LAP SIDING / COASTAL GREY',summary:'A little blue. A little grey. An easy balance.',description:'A cool grey with a hint of blue. The overlapping profile catches the light along each board, adding depth to a restrained palette.',tone:'Blue grey',character:'Calm, considered'},
-    {name:'Ochre cedar',file:'ochre',category:'siding',type:'LAP SIDING / PAINTED CEDAR',summary:'A sun-warmed colour with a little personality.',description:'A warm ochre treatment with the texture of painted timber. Compare it with quieter neutrals and deep blue accents as an illustrative colour direction.',tone:'Golden ochre',character:'Warm, expressive'},
-    {name:'Atlantic blue',file:'atlantic',category:'siding',type:'LAP SIDING / DEEP BLUE',summary:'Deep colour. Clear lines. A grounded exterior.',description:'A muted ocean blue and a familiar horizontal rhythm. A deeper colour can give a simple form a more pronounced presence.',tone:'Ocean blue',character:'Grounded, rhythmic'},
-    {name:'Chalk batten',file:'chalk-batten',category:'siding',type:'VERTICAL / BOARD & BATTEN',summary:'A lighter finish. A different sense of proportion.',description:'Pale vertical boards with raised battens and soft edge shadows. Explore the change in rhythm between horizontal siding and vertical profiles.',tone:'Soft chalk',character:'Vertical, architectural'},
-    {name:'Ink batten',file:'ink-batten',category:'siding',type:'VERTICAL / BOARD & BATTEN',summary:'Dark boards and a crisp, architectural rhythm.',description:'A charcoal tone with fine vertical grain and raised battens. The board edges bring definition to a simple, dark material palette.',tone:'Blue charcoal',character:'Crisp, understated'},
-    {name:'Natural shingles',file:'cedar-shingle',category:'siding',type:'SHINGLES / NATURAL CEDAR',summary:'Warm cedar tones. Character in every piece.',description:'An illustrative cedar shingle pattern with varied widths, warm colour and visible grain. Its small-scale rhythm gives a wall a tactile, crafted feeling.',tone:'Warm cedar',character:'Natural, varied'},
-    {name:'Weathered shingles',file:'weathered-shingle',category:'siding',type:'SHINGLES / WEATHERED GREY',summary:'Gentle greys with a little history in the grain.',description:'An illustrative grey shingle finish with variation from piece to piece. Explore a quieter, weathered colour direction without assuming any particular product or ageing performance.',tone:'Silver grey',character:'Soft, textured'},
-    {name:'Sand float',file:'sand-float',category:'stucco',type:'STUCCO / FINE FLOAT',summary:'Fine texture. A warm, quietly tactile surface.',description:'An illustrative floated plaster finish with small variations in grain and light. Use the opening wall to compare fine, pebbled and smooth finishes at a larger scale.',tone:'Warm sand',character:'Fine, tactile'},
-    {name:'Pebble dash',file:'pebble-dash',category:'stucco',type:'STUCCO / PEBBLED TEXTURE',summary:'A little more depth. A more expressive surface.',description:'A coarser plaster texture with distinct raised grain and small shadows. Compare the visual character of this finish with the fine float and smooth alternatives.',tone:'Stone white',character:'Raised, expressive'},
-    {name:'Smooth ivory',file:'smooth-ivory',category:'stucco',type:'STUCCO / SMOOTH TROWEL',summary:'Soft movement in an otherwise quiet finish.',description:'An illustrative smooth plaster treatment with broad trowel variation. The low-contrast surface lets the form and colour of the exterior take the lead.',tone:'Ivory',character:'Smooth, subtle'},
-    {name:'Warm limestone',file:'limestone',category:'stone',type:'STONE / NATURAL ACCENT',summary:'Soft mineral tones. A grounded finishing detail.',description:'An illustrative cut-stone pattern in warm mineral tones. Explore it as an accent beside plaster or timber, then confirm an actual stone sample and detailing with your contractor.',tone:'Warm mineral',character:'Grounded, natural'}
-  ];
-  const stageNames = ['Paper & lath','Scratch coat','Base coat','The finish'];
-  const finishNames = {float:'Fine float',dash:'Pebbled',smooth:'Smooth'};
-  const colourNames = {ivory:'Ivory',sand:'Sand',clay:'Clay'};
-  const colours = {ivory:'#e9e0c9',sand:'#c9b38d',clay:'#ba8e76'};
+  {
+    "name": "Chalk white",
+    "file": "paint-chalk",
+    "category": "paint",
+    "colour": "#e7e0cd",
+    "type": "EXTERIOR COLOUR / WARM WHITE",
+    "summary": "A quiet backdrop for stone, greenery and shadow.",
+    "description": "An illustrative warm-white paint direction for a masonry exterior. Compare a real sample on your wall in sun and shade, then confirm surface preparation and the specified coating system.",
+    "tone": "Warm chalk",
+    "character": "Quiet, understated"
+  },
+  {
+    "name": "Sandstone beige",
+    "file": "paint-sand",
+    "category": "paint",
+    "colour": "#cbb898",
+    "type": "EXTERIOR COLOUR / EARTH NEUTRAL",
+    "summary": "A soft earth tone for an everyday Bengaluru home.",
+    "description": "A sandy neutral that can sit alongside brick, dark metal and stone. This is a digital colour study, not a manufacturer shade code or a claim of a particular product’s performance.",
+    "tone": "Warm sand",
+    "character": "Soft, grounded"
+  },
+  {
+    "name": "Terracotta clay",
+    "file": "paint-clay",
+    "category": "paint",
+    "colour": "#b77252",
+    "type": "EXTERIOR COLOUR / CLAY",
+    "summary": "A little warmth. A familiar clay-colour accent.",
+    "description": "A terracotta paint direction inspired by the colour of fired clay. Explore it on a feature wall or alongside quieter neutrals; confirm the real colour and exterior suitability with your contractor.",
+    "tone": "Terracotta",
+    "character": "Warm, expressive"
+  },
+  {
+    "name": "Canopy green",
+    "file": "paint-canopy",
+    "category": "paint",
+    "colour": "#4b6252",
+    "type": "EXTERIOR COLOUR / GARDEN GREEN",
+    "summary": "A deeper green, with room for light and shade.",
+    "description": "A muted garden green for a wall or exterior accent. Test the selected product and shade on the actual substrate and compare it under different lighting conditions.",
+    "tone": "Garden green",
+    "character": "Deep, calm"
+  },
+  {
+    "name": "Fine grain",
+    "file": "texture-fine",
+    "category": "texture",
+    "colour": "#ccbfa3",
+    "type": "SURFACE TEXTURE / FINE GRAIN",
+    "summary": "Small variations. A quieter tactile surface.",
+    "description": "An illustrative fine-grained plaster or texture-coating direction. Actual texture, coating build-up and suitability depend on the substrate and selected product system.",
+    "tone": "Warm mineral",
+    "character": "Fine, tactile"
+  },
+  {
+    "name": "Earth render",
+    "file": "texture-earth",
+    "category": "texture",
+    "colour": "#bd9977",
+    "type": "SURFACE TEXTURE / EARTH TONE",
+    "summary": "A warm, mineral look with more depth in the grain.",
+    "description": "An earthy surface treatment with raised grain and small shadows. The appearance does not imply a particular binder, local source, waterproofing capacity or environmental certification.",
+    "tone": "Earth brown",
+    "character": "Raised, expressive"
+  },
+  {
+    "name": "Brushed concrete",
+    "file": "texture-smooth",
+    "category": "texture",
+    "colour": "#c2c1b1",
+    "type": "SURFACE TEXTURE / CONCRETE LOOK",
+    "summary": "Subtle movement. A restrained grey-green surface.",
+    "description": "An illustrative concrete-look finish with broad surface movement. Confirm the actual decorative system, exposure and preparation rather than assuming structural concrete is being specified.",
+    "tone": "Mineral grey",
+    "character": "Smooth, architectural"
+  },
+  {
+    "name": "Limewash look",
+    "file": "texture-lime",
+    "category": "texture",
+    "colour": "#dbd1b5",
+    "type": "SURFACE TEXTURE / SOFT VARIATION",
+    "summary": "Soft tonal movement for a less uniform wall.",
+    "description": "A colour-and-texture study with a limewash-like appearance. It is not a specification for lime application; the contractor should confirm the binder, substrate compatibility and exterior exposure.",
+    "tone": "Warm ivory",
+    "character": "Soft, varied"
+  },
+  {
+    "name": "Exposed brick",
+    "file": "brick",
+    "category": "masonry",
+    "colour": "#a65e43",
+    "type": "MASONRY / FIRED-CLAY LOOK",
+    "summary": "Clay colour. Fine joints. An honest rhythm.",
+    "description": "An illustrative exposed-brick direction. Discuss the actual brick or facing product, water exposure, joints, fixing and transitions as part of a complete exterior design.",
+    "tone": "Fired clay",
+    "character": "Rhythmic, tactile"
+  },
+  {
+    "name": "Terracotta jali",
+    "file": "terracotta-jali",
+    "category": "masonry",
+    "colour": "#b77252",
+    "type": "MASONRY / SCREEN STUDY",
+    "summary": "Pattern, openings and the play of light.",
+    "description": "An illustrative terracotta screen pattern for exploring light and shade. It is not a structural design; support, fixing, privacy, weather exposure and maintenance need project-specific review.",
+    "tone": "Terracotta",
+    "character": "Patterned, open"
+  },
+  {
+    "name": "Grey granite",
+    "file": "granite",
+    "category": "masonry",
+    "colour": "#999c90",
+    "type": "STONE / GRANITE DIRECTION",
+    "summary": "A mineral grey, with character in the surface.",
+    "description": "An illustrative granite direction, drawing on Bengaluru’s stone-and-greenery architectural context. Confirm the stone’s actual origin, finish, thickness, fixing and suitability with the supplier and contractor.",
+    "tone": "Mineral grey",
+    "character": "Grounded, speckled"
+  },
+  {
+    "name": "Warm stone",
+    "file": "warm-stone",
+    "category": "masonry",
+    "colour": "#c2ab8b",
+    "type": "STONE / WARM CLADDING",
+    "summary": "A grounded entrance. A little variation in every piece.",
+    "description": "An illustrative warm-stone facing pattern. Select a physical sample and confirm the actual stone, exterior detailing and installation system before committing to a project.",
+    "tone": "Warm mineral",
+    "character": "Natural, varied"
+  }
+];
+  const stageNames = ['Masonry','Prepare','Prime','Finish'];
+  const finishNames = {float:'Fine grain',dash:'Earth texture',smooth:'Smooth'};
+  const colourNames = {ivory:'Chalk',sand:'Sand',clay:'Clay',canopy:'Canopy'};
+  const colours = {ivory:'#e7e0cd',sand:'#cbb898',clay:'#b77252',canopy:'#4b6252'};
   const wall = {section:$('#wall'),pin:$('.wall-pin'),surface:$('.wall-surface'),enabled:false,manual:0,p:0,active:-1};
   const rail = {section:$('#finishes'),pin:$('.finish-pin'),viewport:$('.finish-window'),track:$('.finish-track'),enabled:false,travel:0,cards:[]};
   const tape = {section:$('#area'),pin:$('.area-pin'),viewport:$('.tape-window'),el:$('.tape'),enabled:false,manual:0,unit:72,case:118};
@@ -42,26 +163,82 @@
     rail.track.append(article);material.element=article;
     const option=document.createElement('option');option.value=material.name;option.textContent=material.name;$('#material').append(option);
   });
+  // Point coordinates and independently reproducible distance method are recorded in assets/bengaluru-geography.json.
   const places=[
-    {km:2,name:'Old town',note:'Familiar streets. A fresh beginning.'},
-    {km:6,name:'Riverside',note:'A little closer to the water.'},
-    {km:10,name:'Oak quarter',note:'Good bones. A new perspective.'},
-    {km:14,name:'North ridge',note:'A different view of coming home.'},
-    {km:19,name:'Lake district',note:'Natural textures. Quieter corners.'},
-    {km:24,name:'Pine valley',note:'A little further into the green.'},
-    {km:29,name:'Hill country',note:'Room for a different direction.'},
-    {km:35,name:'Coastal road',note:'Where the road meets the water.'},
-    {km:40,name:'Harbour end',note:'The last stop on our little journey.'}
-  ];
-  for(let km=0;km<=40;km+=5){
+  {
+    "km": 4.4,
+    "name": "Malleshwaram",
+    "note": "North-west of Cubbon Park."
+  },
+  {
+    "km": 5.6,
+    "name": "Jayanagar",
+    "note": "South of Cubbon Park."
+  },
+  {
+    "km": 6.2,
+    "name": "Indiranagar",
+    "note": "East of Cubbon Park."
+  },
+  {
+    "km": 6.3,
+    "name": "Koramangala",
+    "note": "South-east of Cubbon Park."
+  },
+  {
+    "km": 8.8,
+    "name": "HSR Layout",
+    "note": "South-east of Cubbon Park."
+  },
+  {
+    "km": 12.0,
+    "name": "Marathahalli",
+    "note": "East of Cubbon Park."
+  },
+  {
+    "km": 15.5,
+    "name": "Yelahanka",
+    "note": "North of Cubbon Park."
+  },
+  {
+    "km": 16.2,
+    "name": "Electronic City",
+    "note": "South-east of Cubbon Park."
+  },
+  {
+    "km": 17.0,
+    "name": "Whitefield",
+    "note": "East of Cubbon Park."
+  }
+];
+  for(let km=0;km<=TAPE_KM;km+=5){
     const tick=document.createElement('span');tick.className='major-tick';tick.dataset.km=String(km);tick.textContent=String(km);$('.ticks').append(tick);
   }
   places.forEach(place=>{
     const label=document.createElement('article');label.className='tape-place';
-    label.innerHTML=`<small>${place.km} KM / DEMO</small><h3>${place.name}</h3><p>${place.note}</p>`;
+    label.innerHTML=`<small>≈ ${place.km.toFixed(1)} KM</small><h3>${place.name}</h3><p>${place.note}</p>`;
     $('.place-labels').append(label);place.element=label;
-    const li=document.createElement('li');li.textContent=`${place.name}: ${place.km} illustrative kilometres. ${place.note}`;$('#place-list').append(li);
+    const li=document.createElement('li');li.textContent=`${place.name}: approximately ${place.km.toFixed(1)} kilometres in a straight line from Cubbon Park. ${place.note}`;$('#place-list').append(li);
   });
+
+  const areaSelect=$('#area-select');
+  places.forEach(place=>{
+    const option=document.createElement('option');option.value=place.name;option.textContent=place.name;areaSelect.append(option);
+    const suggestion=document.createElement('option');suggestion.value=place.name;$('#area-suggestions').append(suggestion);
+  });
+  function markArea(name){places.forEach(place=>place.element.classList.toggle('selected-area',place.name===name));}
+  areaSelect.addEventListener('change',()=>{
+    const place=places.find(p=>p.name===areaSelect.value);markArea(place?.name??'');
+    if(!place){$('#area-status').textContent='';return;}
+    $('#location').value=place.name;$('#location').setCustomValidity('');
+    $('#area-status').textContent=`${place.name} added to your brief · about ${place.km.toFixed(1)} km from Cubbon Park.`;
+    setTape(place.km/TAPE_KM);
+  });
+  $('#location').addEventListener('input',()=>{
+    const place=places.find(p=>p.name.toLowerCase()===$('#location').value.trim().toLowerCase());
+    areaSelect.value=place?.name??'';markArea(place?.name??'');$('#area-status').textContent='';
+  });
+  $('#property').addEventListener('change',()=>{$('#property-help').hidden=$('#property').value!=='Apartment exterior';});
 
   function position(scene){
     if(!scene.enabled)return 0;
@@ -92,7 +269,7 @@
     }
     return {mask:'M0 0L'+curve(points).slice(1)+'L0 1Z',edge:curve(points,1000)};
   }
-  const coatKeys=['scratch','base','finish'];
+  const coatKeys=['prepare','prime','finish'];
   const lastCoats=[-1,-1,-1];
   coatKeys.forEach(key=>$('.coat-'+key).style.clipPath=`url("#mask-${key}")`);
   function renderWall(p){
@@ -219,19 +396,32 @@
   }));
 
   function renderTape(p){
-    const distance=clamp(p)*40,length=tape.enabled?distance*tape.unit:40*tape.unit;
+    const distance=clamp(p)*TAPE_KM,length=tape.enabled?distance*tape.unit:TAPE_KM*tape.unit;
     if(tape.enabled&&tape.viewport.scrollLeft)tape.viewport.scrollLeft=0;
     const width=tape.viewport.clientWidth,target=width*(width<=360?.56:width<=600?.61:.7);
     const shift=tape.enabled?Math.min(0,target-tape.lead-tape.case-length):0;
     tape.el.style.setProperty('--blade',`${length}px`);tape.el.style.setProperty('--shift',`${shift}px`);tape.el.style.setProperty('--hook',length>1?'1':'0');
-    places.forEach(place=>{place.element.style.opacity=String(tape.enabled?.14+.86*clamp((distance-place.km+4)/4):1);});
-    $('#tape-range').value=String(Number(distance.toFixed(2)));$('#tape-distance').textContent=`${Math.round(distance)} km`;$('#tape-range').setAttribute('aria-valuetext',`${Math.round(distance)} illustrative kilometres`);
+    // Real neighbourhood distances cluster. Cull colliding captions, never distort the scale.
+    const accepted=[[],[]],visible=new Set(),nativeOffset=tape.enabled?0:tape.viewport.scrollLeft;
+    places.map((place,index)=>({place,index,x:tape.lead+tape.case+place.km*tape.unit-5+shift-nativeOffset}))
+      .filter(item=>item.x+tape.labelWidth>0&&item.x<width)
+      .sort((a,b)=>Math.abs(a.place.km-distance)-Math.abs(b.place.km-distance))
+      .forEach(item=>{
+        const row=accepted[item.index%2];
+        if(row.some(x=>Math.abs(item.x-x)<tape.labelWidth+12))return;
+        row.push(item.x);visible.add(item.place);
+      });
+    places.forEach(place=>{
+      const opacity=tape.enabled?.16+.84*clamp((distance-place.km+2.5)/2.5):1;
+      place.element.style.opacity=String(visible.has(place)?opacity:0);
+    });
+    $('#tape-range').value=String(Number(distance.toFixed(2)));$('#tape-distance').textContent=`${Number(distance.toFixed(1))} km`;$('#tape-range').setAttribute('aria-valuetext',`${Number(distance.toFixed(1))} approximate straight-line kilometres from Cubbon Park`);
   }
   function setTape(p){
     tape.manual=clamp(p);renderTape(tape.manual);
     if(tape.enabled)seek(tape,tape.manual);else tape.viewport.scrollTo({left:tape.manual*(tape.viewport.scrollWidth-tape.viewport.clientWidth),behavior:'instant'});
   }
-  $('#tape-range').addEventListener('input',()=>setTape(Number($('#tape-range').value)/40));
+  $('#tape-range').addEventListener('input',()=>setTape(Number($('#tape-range').value)/TAPE_KM));
   tape.viewport.addEventListener('scroll',()=>{if(tape.enabled)return;const travel=tape.viewport.scrollWidth-tape.viewport.clientWidth;tape.manual=travel?clamp(tape.viewport.scrollLeft/travel):0;renderTape(tape.manual);},{passive:true});
   tape.viewport.addEventListener('keydown',event=>{
     if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
@@ -252,34 +442,42 @@
     $('#selected-swatch').style.backgroundImage=selected?`url("assets/${selected.file}.svg")`:'';
     $('#selected-swatch').style.backgroundColor=savedWall?colours[savedWall.colour]:'';
     if(savedWall)$('#selected-swatch').style.backgroundBlendMode='luminosity';else $('#selected-swatch').style.backgroundBlendMode='normal';
+    $('.project-study').style.setProperty('--study-wall',savedWall?colours[savedWall.colour]:selected?.colour??colours.ivory);
+    const feature=selected?.file==='granite'||selected?.file==='warm-stone'?'stone':selected?.file==='terracotta-jali'?'jali':'brick';
+    $('#study-feature').setAttribute('fill',`url(#study-${feature})`);
   }
   function selectMaterial(material,fromWall=null){
     if(!$('#project-result').hidden)resetBrief();
-    selected=material;savedWall=fromWall;$('#material').value=material.name;$('#service').value={siding:'Siding & cladding',stucco:'Stucco & finishes',stone:'Stone accents'}[material.category];selectionSummary();
+    selected=material;savedWall=fromWall;$('#material').value=material.name;$('#service').value={paint:'Exterior repainting',texture:'Textured walls',masonry:'Brick & stone details'}[material.category];selectionSummary();
     jumpTo('#project');$('#name').focus({preventScroll:true});
   }
   $('#choose-material').addEventListener('click',()=>{suppressRailFocusUntil=performance.now()+600;dialog.close();selectMaterial(dialogMaterial);});
-  $('#save-wall').addEventListener('click',()=>selectMaterial(materials.find(m=>m.file===(wallChoice.texture==='smooth'?'smooth-ivory':wallChoice.texture==='dash'?'pebble-dash':'sand-float')),{...wallChoice}));
-  $('#material').addEventListener('change',()=>{selected=materials.find(m=>m.name===$('#material').value)||null;savedWall=null;if(selected)$('#service').value={siding:'Siding & cladding',stucco:'Stucco & finishes',stone:'Stone accents'}[selected.category];selectionSummary();});
+  $('#save-wall').addEventListener('click',()=>selectMaterial(materials.find(m=>m.file===(wallChoice.texture==='smooth'?`paint-${wallChoice.colour==='ivory'?'chalk':wallChoice.colour}`:wallChoice.texture==='dash'?'texture-earth':'texture-fine')),{...wallChoice}));
+  $('#material').addEventListener('change',()=>{selected=materials.find(m=>m.name===$('#material').value)||null;savedWall=null;if(selected)$('#service').value={paint:'Exterior repainting',texture:'Textured walls',masonry:'Brick & stone details'}[selected.category];selectionSummary();});
 
   const form=$('#project-form');form.noValidate=true;
   $$('input,select,textarea',form).forEach(field=>field.addEventListener('input',()=>field.setCustomValidity('')));
   form.addEventListener('submit',event=>{
     event.preventDefault();
     for(const field of $$('input[required],select[required]',form)){if(field.type!=='email')field.setCustomValidity(field.value.trim()?'':'Please complete this field.');}
+    const phone=$('#phone'),digits=phone.value.replace(/\D/g,'');
+    phone.setCustomValidity(phone.value.trim()&&(!/^[+()\d\s-]+$/.test(phone.value)||digits.length<8||digits.length>15)?'Use 8–15 digits, with spaces or a country code if needed.':'');
+    $('#pin').value=$('#pin').value.trim();
+    if(!phone.checkValidity()||!$('#pin').checkValidity())$('.optional-site').open=true;
     if(!form.reportValidity())return;
     const value=id=>$('#'+id).value.trim();
-    brief=['CEDAR & STONE — PROJECT BRIEF','Demo only — no enquiry has been sent.','',`Name: ${value('name')}`,`Email: ${value('email')}`,`Area: ${value('location')}`,`Project: ${value('service')}`,`Material direction: ${value('material')||'Open to ideas'}`,...(savedWall?[`Wall exploration: ${finishNames[savedWall.texture]} / ${colourNames[savedWall.colour]}`]:[]),...(value('notes')?['',`Project notes: ${value('notes')}`]:[]),'','Share this brief with your chosen contractor to discuss real samples, your home and the project scope.'].join('\n');
+    const area=places.find(place=>place.name.toLowerCase()===value('location').toLowerCase());
+    brief=['CEDAR & STONE BENGALURU — PROJECT BRIEF','Concept demo — no enquiry has been sent.','',`Name: ${value('name')}`,`Email: ${value('email')}`,...(value('phone')?[`Contact number: ${value('phone')}`]:[]),'City: Bengaluru',`Neighbourhood / area: ${value('location')}`,...(value('pin')?[`Site PIN: ${value('pin')}`]:[]),...(area?[`Approx. distance from Cubbon Park: ${area.km.toFixed(1)} km (straight line, not driving distance)`]:[]),`Property: ${value('property')}`,`Work requested: ${value('service')}`,`Material direction: ${value('material')||'Open to ideas'}`,...(savedWall?[`Wall exploration: ${finishNames[savedWall.texture]} / ${colourNames[savedWall.colour]}`]:[]),`Existing surface: ${value('condition')}`,...(value('property')==='Apartment exterior'?['Shared exterior: discuss association coordination, access and scaffolding.']:[]),...(value('notes')?['',`Project notes: ${value('notes')}`]:[]),'','Share this brief with your chosen Bengaluru contractor. Confirm site condition, dampness/repairs, physical samples, product system, access, weather planning and actual service availability.'].join('\n');
     $('#brief').textContent=brief;form.hidden=true;$('#project-result').hidden=false;$('#project-result').focus({preventScroll:true});
   });
   $('#download').addEventListener('click',()=>{
-    if(!brief)return;const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='cedar-stone-project-brief.txt';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    if(!brief)return;const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='cedar-stone-bengaluru-brief.txt';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   $('#copy').addEventListener('click',async()=>{
     try{await navigator.clipboard.writeText(brief);$('#copy-status').textContent='Brief copied. Ready for your next conversation.';}
     catch{$('#copy-status').textContent='Copy is unavailable here. Download the brief or select the text above.';}
   });
-  function resetBrief(){form.reset();brief='';selected=null;savedWall=null;$('#brief').textContent='';$('#copy-status').textContent='';form.hidden=false;$('#project-result').hidden=true;$$('input,select,textarea',form).forEach(f=>f.setCustomValidity(''));selectionSummary();}
+  function resetBrief(){form.reset();brief='';selected=null;savedWall=null;$('#brief').textContent='';$('#copy-status').textContent='';form.hidden=false;$('#project-result').hidden=true;$$('input,select,textarea',form).forEach(f=>f.setCustomValidity(''));areaSelect.value='';markArea('');$('#area-status').textContent='';$('#property-help').hidden=true;$('.optional-site').open=false;selectionSummary();}
   $('#reset').addEventListener('click',()=>{resetBrief();$('#name').focus({preventScroll:true});});
 
   const menu=$('.menu'),navigation=$('#navigation');
@@ -308,11 +506,12 @@
     rail.travel=Math.max(0,rail.track.scrollWidth-rail.viewport.clientWidth);rail.enabled=allowed&&rail.travel>1;
     rail.section.classList.toggle('pinned',rail.enabled);rail.section.style.height=rail.enabled?`${available+Math.max(160,rail.travel*(innerWidth<=600?.65:.4))}px`:'';
     rail.cards=$$('.finish-card').filter(c=>!c.hidden).map(el=>({el,left:el.offsetLeft,centre:el.offsetLeft+el.offsetWidth/2}));
-    tape.enabled=allowed;tape.section.classList.toggle('pinned',tape.enabled);tape.unit=innerWidth<=600?36:72;tape.case=innerWidth<=600?94:118;tape.lead=parseFloat(getComputedStyle(tape.el).marginLeft)||0;
+    tape.enabled=allowed;tape.section.classList.toggle('pinned',tape.enabled);tape.unit=innerWidth<=600?58:110;tape.case=innerWidth<=600?94:118;tape.lead=parseFloat(getComputedStyle(tape.el).marginLeft)||0;
     tape.el.style.setProperty('--unit',`${tape.unit}px`);tape.el.style.setProperty('--case',`${tape.case}px`);
     $$('.major-tick').forEach(tick=>tick.style.left=`${Number(tick.dataset.km)*tape.unit}px`);
     places.forEach(place=>place.element.style.left=`${tape.case+place.km*tape.unit-5}px`);
-    tape.section.style.height=tape.enabled?`${available+Math.max(850,40*tape.unit*.46)}px`:'';
+    tape.labelWidth=places[0].element.offsetWidth;
+    tape.section.style.height=tape.enabled?`${available+Math.max(850,TAPE_KM*tape.unit*.46)}px`:'';
     scenes.forEach(scene=>{scene.distance=scene.enabled?Math.max(1,scene.section.offsetHeight-scene.pin.offsetHeight):0;});
     $('.browse-hint b').textContent=rail.enabled?'SCROLL TO EXPLORE':'SWIPE OR USE THE ARROWS';
     resizeCanvas();measuring=false;render();

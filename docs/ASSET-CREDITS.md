@@ -29,3 +29,12 @@ The Instagram reel is linked for reference analysis only. Its video, thumbnail, 
 ## New composition demo (`/demo/`)
 
 The separate demo uses original SVG material textures and inline illustrations, with no third-party photography. It adds **Lora** from the [official Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/lora), under [its included SIL Open Font License](../demo/assets/Lora-OFL.txt). DM Sans and its license are also bundled in `demo/assets/`. The demo artwork is illustrative rather than manufacturer product imagery.
+
+
+## Bengaluru rebuild
+
+The current `/demo/` uses seventeen original SVG material/scene assets plus an original inline courtyard colour-study illustration. They are illustrative artwork, not photographs of completed projects. The former siding/shingle textures have been removed from the demo directory.
+
+**Noto Sans Kannada** is bundled from [Google Fonts’ official repository](https://github.com/google/fonts/tree/main/ofl/notosanskannada), under [the included SIL Open Font License](../demo/assets/Noto-Kannada-OFL.txt). Lora and DM Sans remain locally bundled under their included licenses.
+
+Public representative geographic coordinates and their source URLs are recorded in [bengaluru-geography.json](../demo/assets/bengaluru-geography.json); the calculation and limitations appear in the [research plan](BENGALURU-RESEARCH-PLAN.md). No third-party map tiles or map imagery are used. The original reel's artwork, footage and screenshots are not redistributed.

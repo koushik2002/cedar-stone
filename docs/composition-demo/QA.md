@@ -1,3 +1,5 @@
+> Historical verification for the earlier navy composition (`fbc5970`). The current `/demo/` is the [Bengaluru rebuild](../bengaluru-demo/QA.md), with its own verification record and screenshots.
+
 # Composition demo verification
 
 Checked 20 October 2026 using headless Chrome with an isolated browser profile. These are desktop and mobile viewport emulations, not physical-device or Safari certification.

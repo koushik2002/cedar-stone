@@ -1,0 +1,75 @@
+{
+  "retrieved": "2026-10-20",
+  "origin": {
+    "name": "Cubbon Park",
+    "latitude": 12.975,
+    "longitude": 77.5933333333,
+    "source": "https://www.wikidata.org/wiki/Q3633776"
+  },
+  "method": "Haversine great-circle distance with Earth radius 6371 km, rounded to 0.1 km. Representative point coordinates, not neighbourhood boundaries, driving distances or service commitments.",
+  "places": [
+    {
+      "name": "Malleshwaram",
+      "latitude": 13.0031,
+      "longitude": 77.5643,
+      "source": "https://en.wikipedia.org/wiki/Malleshwaram",
+      "km": 4.4
+    },
+    {
+      "name": "Jayanagar",
+      "latitude": 12.925,
+      "longitude": 77.595,
+      "source": "https://www.wikidata.org/wiki/Q3429967",
+      "km": 5.6
+    },
+    {
+      "name": "Indiranagar",
+      "latitude": 12.97,
+      "longitude": 77.65,
+      "source": "https://www.wikidata.org/wiki/Q6025083",
+      "km": 6.2
+    },
+    {
+      "name": "Koramangala",
+      "latitude": 12.9258333333,
+      "longitude": 77.6227777778,
+      "source": "https://www.wikidata.org/wiki/Q5320506",
+      "km": 6.3
+    },
+    {
+      "name": "HSR Layout",
+      "latitude": 12.91,
+      "longitude": 77.64,
+      "source": "https://www.wikidata.org/wiki/Q5635997",
+      "km": 8.8
+    },
+    {
+      "name": "Marathahalli",
+      "latitude": 12.956194,
+      "longitude": 77.701943,
+      "source": "https://en.wikipedia.org/wiki/Marathahalli",
+      "km": 12.0
+    },
+    {
+      "name": "Yelahanka",
+      "latitude": 13.11389,
+      "longitude": 77.59833,
+      "source": "https://en.wikipedia.org/wiki/Yelahanka",
+      "km": 15.5
+    },
+    {
+      "name": "Electronic City",
+      "latitude": 12.85,
+      "longitude": 77.67,
+      "source": "https://en.wikipedia.org/wiki/Electronic_City",
+      "km": 16.2
+    },
+    {
+      "name": "Whitefield",
+      "latitude": 12.97,
+      "longitude": 77.75,
+      "source": "https://www.wikidata.org/wiki/Q5321082",
+      "km": 17.0
+    }
+  ]
+}

@@ -1,37 +1,42 @@
-# Cedar & Stone — composition demo
+# Cedar & Stone — Bengaluru exterior demo
 
 Live demo: [koushik2002.github.io/cedar-stone/demo/](https://koushik2002.github.io/cedar-stone/demo/)
 
-A fresh implementation of the reference reel's visual sequence: compact dark navigation, an interactive wall, twelve large material boards, illustrated services, four process rows, a physical measuring tape and a compact project form.
+An original, research-informed Bengaluru adaptation of the material-led interaction sequence in the reference reel. Cedar & Stone remains a fictional concept brand.
 
-The palette is deep navy, slate blue, warm ivory and yellow. The headings use Lora; supporting text uses DM Sans. This demo uses original content, textures and code. The reference footage and screenshots are not distributed.
+## What was rebuilt
 
-Open `index.html` directly or serve the repository with `python3 -m http.server 8000`, then visit `/demo/`. There is no installation, build step, dependency or external runtime request.
+- A Bengaluru identity, Kannada city label and garden-green, stone, clay and gold palette.
+- A masonry wall with independent pointer/button plaster, followed by scroll-driven preparation, primer and finish stages. This is an illustration, not an installation specification.
+- Twelve material directions: four exterior paint colours, four surface textures, and four brick/jali/stone directions. The catalogue retains continuous horizontal movement, filters, keyboard controls and detailed sample dialogs.
+- Colour/texture exploration on the whole wall, with a courtyard-house palette illustration that changes with the selected finish.
+- Services and process copy addressing exterior repainting, cracks/dampness assessment, textured walls, brick/jali, compound walls/parapets, stone details, access and weather planning.
+- A physical measuring-tape neighbourhood explorer using nine real Bengaluru places and approximate straight-line distances from Cubbon Park. A selector copies the neighbourhood into the brief. Caption collisions are handled without changing the distance scale.
+- A local brief with neighbourhood, property type, work, material direction, optional PIN/contact/surface condition, apartment coordination prompt, notes, download, copy and reset.
+- Reduced-motion, keyboard and short-viewport alternatives.
 
-## Interactions
+The [research and rebuild plan](../docs/BENGALURU-RESEARCH-PLAN.md) links IMD, IIM Bangalore, IISc, a manufacturer masonry-coating reference and every geographic source. It distinguishes evidence from design interpretation. The [geography source record](assets/bengaluru-geography.json) includes the origin, point coordinates, source URLs and calculation method.
 
-- Move the mouse across the opening wall, or use **Try a plaster stroke**.
-- Scroll through the three coats, or select a stage. Arrow keys, Home and End also work when a stage button is focused.
-- Explore full-wall texture and colour, then keep a finish for the project brief.
-- Scroll through the material boards; arrows, Home/End, filters and material dialogs are available. Selecting a sample carries the relevant service and material into the form.
-- Watch the process rows fill as they enter view.
-- Extend and retract the measuring tape by scrolling, dragging its range control, or using arrow keys in the tape region. Nine fictional places are shown along 0–40 illustrative kilometres.
-- Complete the compact form to create a local brief, download/copy it or reset.
-- Reduced-motion preferences and short viewports use normal page scrolling and native horizontal exploration instead of pinned scenes.
+## Run locally
 
-**Demo boundary:** Cedar & Stone and all service-area places are fictional. Materials and colours are illustrative, not product specifications. The project form creates a brief in page memory; it does not send an enquiry or persist visitor data. Copy depends on browser permissions and has a download fallback.
+There is no installation, build step or external runtime dependency. Open `index.html` directly, or serve the repository with:
 
-## Design and verification
+```sh
+python3 -m http.server 8000
+```
 
-The [design plan](../docs/DEMO-DESIGN-PLAN.md) records the structure and composition decisions made before implementation. [Verification and previews](../docs/composition-demo/QA.md) record 80 passing browser checks and the browser limits.
+Then open `http://localhost:8000/demo/`.
 
-## Files
+## Demo boundary
 
-- `index.html`: structure, copy, illustrations and form.
-- `demo.css`: colour/type system, scenes and responsive layout.
-- `demo.js`: material data, scroll scenes, controls, dialogs and local brief.
-- `assets/`: original SVG textures, local fonts and licenses.
+The brand is fictional; an actual contractor, address, phone number, WhatsApp account, prices, reviews and completed projects have not been invented. The neighbourhoods are real, but distances are approximate radial point-to-point calculations, not driving distances or verified business service coverage. Material surfaces and the house illustration are original visual studies, not manufacturer samples or completed work.
 
-## Fonts and artwork
+The form builds a brief in page memory. It sends no enquiry and saves no visitor data to a server or persistent browser storage. Refreshing clears the brief. Clipboard access depends on browser permissions; downloading works independently. No map, geocoding or weather API runs on the published page.
 
-Lora is bundled from [Google Fonts' official repository](https://github.com/google/fonts/tree/main/ofl/lora), under the included `assets/Lora-OFL.txt`. DM Sans is bundled locally with `assets/DM-Sans-OFL.txt`. All seventeen SVG assets and inline illustrations are original procedural artwork for this demo. No third-party photographs are used.
+## Source and assets
+
+`index.html`, `demo.css` and `demo.js` contain the implementation. `assets/` contains original SVG textures, a public geography source record, and local Lora, DM Sans and Noto Sans Kannada fonts with their SIL Open Font License notices.
+
+The reference reel's video and screenshots are not distributed. The older navy composition is preserved in Git history at commit `fbc5970`; the repository root is a separate earlier concept.
+
+See [Bengaluru verification](../docs/bengaluru-demo/QA.md) for current checks and screenshots. The earlier [composition verification](../docs/composition-demo/QA.md) is historical evidence for the prior version.

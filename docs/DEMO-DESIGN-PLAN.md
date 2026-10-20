@@ -1,3 +1,5 @@
+> Earlier composition plan, superseded for `/demo/` by the [Bengaluru research and rebuild plan](BENGALURU-RESEARCH-PLAN.md). Retained to document the previous design.
+
 # Cedar & Stone — composition demo
 
 ## Aim

@@ -4,7 +4,7 @@ An original, responsive exterior contractor concept built for Koushik to demonst
 
 Live website: [koushik2002.github.io/cedar-stone/](https://koushik2002.github.io/cedar-stone/) · Source: [koushik2002/cedar-stone](https://github.com/koushik2002/cedar-stone)
 
-**New composition demo:** [koushik2002.github.io/cedar-stone/demo/](https://koushik2002.github.io/cedar-stone/demo/) — revised structure, navy/ivory/yellow palette, larger material boards and a compact project form. See the [design plan](docs/DEMO-DESIGN-PLAN.md) and [80-check verification record](docs/composition-demo/QA.md).
+**Bengaluru rebuild:** [koushik2002.github.io/cedar-stone/demo/](https://koushik2002.github.io/cedar-stone/demo/) — masonry, paint/plaster/brick/jali/stone, a local palette, researched neighbourhood distances and a Bengaluru project brief. See the [research and plan](docs/BENGALURU-RESEARCH-PLAN.md), [demo source guide](demo/README.md) and [current verification](docs/bengaluru-demo/QA.md).
 
 ![Desktop preview of Cedar and Stone](docs/desktop-preview.png)
 
